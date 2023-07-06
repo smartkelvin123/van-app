@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
 import Home from "./component/Home";
 import About from "./component/About";
 import Vans from "./component/Vans";
-
+import VanDetails from "./component/VanDetails";
+import ProductDetails from "./component/ProductDetails";
 import "./App.css";
-
 import "./server";
 
 function App() {
@@ -26,6 +25,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={<Vans />} />
+        <Route path="/vans/:id" element={<VanDetails />} />
+        <Route path="/products/:productId" element={<ProductDetails />} />
       </Routes>
     </BrowserRouter>
   );
