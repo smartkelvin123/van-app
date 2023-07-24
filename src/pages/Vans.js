@@ -21,7 +21,7 @@ const Van = () => {
 
   const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
-      <Link to={van.id}>
+      <Link to={van.id} state={{ search: `?${searhparams.toString()}` }}>
         <img src={van.imageUrl} alt="" />
         <div className="van-info">
           <h3>{van.name}</h3>

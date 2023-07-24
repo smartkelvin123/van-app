@@ -16,7 +16,7 @@ import HostVans from "./pages/Host/HostVans";
 import HostVanDetail from "./pages/Host/HostVanDetail";
 import HostVanInfo from "./pages/Host/HostVanInfo";
 import HostVanPhotos from "./pages/Host/HostVanPhotos";
-// import HostVanPricing from "./pages/Host/HostVanPricing";
+import NotFound from "./pages/NotFound";
 import HostVanPrincing from "./pages/Host/HostVanPricing ";
 
 import "./App.css";
@@ -47,6 +47,7 @@ function App() {
             </Route>
           </Route>
         </Route>
+        <Route path="*" element={<>404 Not Found</>}></Route>
       </Routes>
     </BrowserRouter>
   );

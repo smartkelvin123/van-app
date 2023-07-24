@@ -184,6 +184,15 @@ footer {
     padding-inline: 23px
 }
 
+.van-list-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.van-list-filter-buttons > a {
+    margin-right: 15px;
+}
+
 .van-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -261,7 +270,7 @@ i[class*='van-type-'] {
 }
 
 .van-detail-container {
-    padding: 27px;
+    padding-inline: 27px;
 }
 
 .van-detail-container .back-button {
@@ -315,6 +324,7 @@ i[class*='van-type-'] {
 
 .host-nav {
     display: flex;
+    margin-bottom: 30px;
 }
 
 .host-nav a {
@@ -445,4 +455,14 @@ i[class*='van-type-'] {
 .host-van-detail-image {
     height: 100px;
     border-radius: 5px;
+}
+
+.not-found-container {
+    padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+    width: 100%;
+    background-color: #161616;
+    color: white;
 }
