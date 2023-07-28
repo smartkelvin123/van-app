@@ -32,10 +32,10 @@ const Header = () => {
             <Link to="/login" className="login-link">
               Login
               <img
-                // src="./home-hero/png"
-                src="../avatar-icon(1).png"
-                className="login-icon"
-                // alt="icon"
+              // src="./home-hero/png"
+              // src="../avatar-icon(1).png"
+              // className="login-icon"
+              // alt="icon"
               />
             </Link>
           </NavLink>
