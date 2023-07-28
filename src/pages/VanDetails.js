@@ -1,15 +1,12 @@
 import React from "react";
-
-import { Link, useLocation, useLoaderData } from "react-router-dom";
+import { Link, useParams, useLocation, useLoaderData } from "react-router-dom";
 import { getVans } from "../Api";
-import { requireAuth } from "../utils";
 
-export async function loader({ params }) {
-  await requireAuth();
+export function loader({ params }) {
   return getVans(params.id);
 }
 
-const VanDetails = () => {
+export default function VanDetail() {
   const location = useLocation();
   const van = useLoaderData();
 
@@ -34,5 +31,4 @@ const VanDetails = () => {
       </div>
     </div>
   );
-};
-export default VanDetails;
+}

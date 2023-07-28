@@ -1,5 +1,11 @@
 import React from "react";
-import { Link, Outlet, NavLink, useLoaderData } from "react-router-dom";
+import {
+  useParams,
+  Link,
+  NavLink,
+  Outlet,
+  useLoaderData,
+} from "react-router-dom";
 import { getHostVans } from "../../Api";
 import { requireAuth } from "../../utils";
 
@@ -13,8 +19,8 @@ export default function HostVanDetail() {
 
   const activeStyles = {
     fontWeight: "bold",
-    color: "white",
     textDecoration: "underline",
+    color: "#161616",
   };
 
   return (

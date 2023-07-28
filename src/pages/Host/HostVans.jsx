@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { getHostVans } from "../../Api";
 import { requireAuth } from "../../utils";
@@ -8,7 +8,7 @@ export async function loader() {
   return getHostVans();
 }
 
-const HostVans = () => {
+export default function HostVans() {
   const vans = useLoaderData();
 
   const hostVansEls = vans.map((van) => (
@@ -31,5 +31,4 @@ const HostVans = () => {
       </div>
     </section>
   );
-};
-export default HostVans;
+}
