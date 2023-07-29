@@ -27,7 +27,10 @@ import HostVanInfo from "./pages/Host/HostVanInfo";
 import HostVanPhotos from "./pages/Host/HostVanPhotos";
 import NotFound from "./pages/NotFound";
 import HostVanPrincing from "./pages/Host/HostVanPricing ";
-import Login, { loader as loginLoader } from "./pages/Host/Login";
+import Login, {
+  loader as loginLoader,
+  action as loginAction,
+} from "./pages/Host/Login";
 import { requireAuth } from "./utils";
 
 import "./App.css";
@@ -38,7 +41,12 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="login" element={<Login />} loader={loginLoader} />
+      <Route
+        path="login"
+        element={<Login />}
+        loader={loginLoader}
+        action={loginAction}
+      />
       <Route
         path="vans"
         element={<Vans />}
