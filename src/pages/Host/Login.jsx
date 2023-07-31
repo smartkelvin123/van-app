@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLoaderData, useNavigate, Form, redirect } from "react-router-dom";
 import { loginUser } from "../../Api";
 
@@ -12,7 +12,6 @@ export async function action({ request }) {
   const password = formData.get("password");
   const data = await loginUser({ email, password });
   localStorage.setItem("loggedin", true);
-
   return redirect("/host");
 }
 
@@ -25,9 +24,8 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting");
-    setError(null);
-
-    loginUser(loginFormData)
+    setError(null)
+      // loginUser(loginFormData)
       .then((data) => {
         navigate("/host", { replace: true });
       })
@@ -41,7 +39,7 @@ export default function Login() {
       {message && <h3 className="red">{message}</h3>}
       {error && <h3 className="red">{error.message}</h3>}
 
-      <Form method="post" className="login-form">
+      <Form method="post" className="login-form" replace>
         <input name="email" type="email" placeholder="Email address" />
         <input name="password" type="password" placeholder="Password" />
         <button disabled={status === "submitting"}>
