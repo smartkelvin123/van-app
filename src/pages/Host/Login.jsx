@@ -13,13 +13,14 @@ export function loader({ request }) {
 }
 
 export async function action({ request }) {
-  console.log(request);
   const formData = await request.formData();
   const email = formData.get("email");
   const password = formData.get("password");
+  const pathname =
+    new URL(request.url).searchParams.get("redirectTo") || "/host";
   try {
     const data = await loginUser({ email, password });
-    localStorage.setItem("loggedin", true);
+    localStorage.getItem("loggedin", true);
     return redirect("/host");
   } catch (err) {
     return { error: err.message };
